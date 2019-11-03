@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2019-11-03T04:40:43+01:00",
+  "id": "cypress-workshop-bdx",
+  "duration": 104,
+  "title": "Workshop Cypress",
+  "authors": "Rodolphe Bung, Jordan Nourry",
+  "summary": "Workshop pour apprendre Cypress",
+  "source": "cypress.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "cypress"
+  ],
+  "tags": [
+    "bdx"
+  ],
+  "feedback": "TODO",
+  "url": "cypress-workshop-bdx"
+}

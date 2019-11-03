@@ -1,0 +1,7 @@
+{
+  "title": "BDX.IO",
+  "description": "Apprenez Cypress à BDX.IO !",
+  "logoUrl": "/bdx/bdx.jpg",
+  "tags": ["bdx"],
+  "exclude": [".*-about$", "^lang-.*"]
+}

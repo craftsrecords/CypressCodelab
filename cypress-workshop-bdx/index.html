@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>How to Write a Codelab</title>
+  <title>Workshop Cypress</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -22,27 +22,54 @@
 <body>
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
-                  id="how-to-write-a-codelab"
-                  title="How to Write a Codelab"
+                  id="cypress-workshop-bdx"
+                  title="Workshop Cypress"
                   environment="web"
-                  feedback-link="https://zarin.io">
+                  feedback-link="TODO">
     
-      <google-codelab-step label="Overview" duration="1">
-        <h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
-<ul class="checklist">
-<li>how to set the amount of time each slide will take to finish</li>
-<li>how to include code snippets</li>
-<li>how to hyperlink items</li>
-<li>how to include images</li>
-<li>other stuff</li>
+      <google-codelab-step label="Bienvenue" duration="90">
+        <p>Bienvenue dans ce workshop dédié à Cypress! Nous espérons qu&#39;il vous plaira!</p>
+<h2 is-upgraded>Ce que vous allez apprendre</h2>
+<ul>
+<li>Les bases de Cypress</li>
+<li>Les différents niveaux de tests</li>
+<li>Manipuler les requêtes XHR</li>
+<li>Faire une commande personnalisée</li>
+<li>Intégration des tests dans une CICD</li>
 </ul>
+<h2 is-upgraded>Documentation</h2>
+<ul>
+<li><a href="https://docs.cypress.io/api/api/table-of-contents.html" target="_blank">https://docs.cypress.io/api/api/table-of-contents.html</a></li>
+</ul>
+<aside class="special"><p>This will appear in a positive info box.</p>
+</aside>
+<aside class="warning"><p>This will appear in a negative info box.</p>
+</aside>
+<p><a href="https://www.google.com" target="_blank">Download SDK</a></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Setting Duration" duration="2">
-        <p>To indicate how long each slide will take to go through, set the <code>Duration</code> under each Heading 2 (i.e. <code>##</code>) to an integer.<br>The integers refer to minutes. If you set <code>Duration: 4</code> then a particular slide will take 4 minutes to complete.</p>
-<p>The total time will automatically be calculated for you and will be displayed on the codelab once you create it.</p>
+      <google-codelab-step label="Avant de commencer" duration="10">
+        <h2 is-upgraded>Pré-requis</h2>
+<ul>
+<li>Avoir une connection internet</li>
+<li>Git</li>
+<li>NodeJs</li>
+</ul>
+<h2 is-upgraded>Télécharger le repo</h2>
+<pre><code>git clone  https://github.com/JKratus/Cypress-Devoxx-Hands-on-Lab.git
+</code></pre>
+<h2 is-upgraded>Installer le projet</h2>
+<pre><code>npm install
+</code></pre>
+<h2 is-upgraded>Vérifier que le tout fonctionne</h2>
+<p>Lancer l&#39;application</p>
+<pre><code>npm start
+</code></pre>
+<p>Lancer Cypress</p>
+<pre><code>npx cypress open
+</code></pre>
 
 
       </google-codelab-step>
