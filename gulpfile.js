@@ -289,11 +289,18 @@ gulp.task('minify', gulp.parallel(
   'minify:js',
 ));
 
+gulp.task('copy:codelab', (callback) => {
+  fs.removeSync('dist/codelabs');
+  fs.copySync(CODELABS_DIR, 'dist/codelabs');
+  callback();
+});
+
 // dist packages the build for distribution, compressing and condensing where
 // appropriate.
 gulp.task('dist', gulp.series(
   'build',
   'copy',
+  'copy:codelab',
   'minify',
 ));
 
