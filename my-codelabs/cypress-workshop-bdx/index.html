@@ -27,7 +27,7 @@
                   environment="web"
                   feedback-link="TODO">
     
-      <google-codelab-step label="Bienvenue" duration="90">
+      <google-codelab-step label="Bienvenue 🤗" duration="2">
         <p>Bienvenue dans ce workshop dédié à Cypress! Nous espérons qu&#39;il vous plaira!</p>
 <h2 is-upgraded>Ce que vous allez apprendre</h2>
 <ul>
@@ -35,77 +35,185 @@
 <li>Les différents niveaux de tests</li>
 <li>Manipuler les requêtes XHR</li>
 <li>Faire une commande personnalisée</li>
-<li>Intégration des tests dans une CICD</li>
+<li>Et d&#39;autres choses si nous avons le temps!</li>
 </ul>
-<h2 is-upgraded>Documentation</h2>
+<h2 is-upgraded>Pendant le workshop</h2>
+<p>N&#39;hésitez pas à:</p>
 <ul>
-<li><a href="https://docs.cypress.io/api/api/table-of-contents.html" target="_blank">https://docs.cypress.io/api/api/table-of-contents.html</a></li>
+<li>à soliciter les animateurs du workshop</li>
+<li>aider les autres si vous avez déjà de l&#39;expérience avec Cypress</li>
+<li>regarder la <a href="https://docs.cypress.io/api/api/table-of-contents.html" target="_blank">documentation (très bien faite) de Cypress</a></li>
 </ul>
-<aside class="special"><p>This will appear in a positive info box.</p>
-</aside>
-<aside class="warning"><p>This will appear in a negative info box.</p>
-</aside>
-<p><a href="https://www.google.com" target="_blank">Download SDK</a></p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Avant de commencer" duration="10">
+      <google-codelab-step label="Avant de commencer ✋" duration="20">
         <h2 is-upgraded>Pré-requis</h2>
 <ul>
 <li>Avoir une connection internet</li>
-<li>Git</li>
-<li>NodeJs</li>
+<li><a href="https://git-scm.com/downloads" target="_blank">Git</a></li>
+<li><a href="https://nodejs.org/en/download/" target="_blank">NodeJs</a></li>
+<li><em>Recommandé mais pas obligatoire</em>: <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
 </ul>
+<aside class="warning"><p>Si par hasard, vous accédez à internet via un proxy d&#39;entreprise, pensez à jeter aussi un coup d&#39;oeil sur <a href="https://docs.cypress.io/guides/references/proxy-configuration.html" target="_blank">cette page</a> pour que Cypress fonctionne correctement</p>
+</aside>
 <h2 is-upgraded>Télécharger le repo</h2>
-<pre><code>git clone  https://github.com/JKratus/Cypress-Devoxx-Hands-on-Lab.git
+<pre><code>git clone  https://github.com/rbung/CypressWorkshop.git
 </code></pre>
 <h2 is-upgraded>Installer le projet</h2>
-<pre><code>npm install
+<pre><code>cd CypressWorkshop
+npm install
 </code></pre>
 <h2 is-upgraded>Vérifier que le tout fonctionne</h2>
-<p>Lancer l&#39;application</p>
+<ul>
+<li>Dans un terminal, lancer l&#39;application</li>
+</ul>
 <pre><code>npm start
 </code></pre>
-<p>Lancer Cypress</p>
+<ul>
+<li>Dans un autre terminal, lancer Cypress</li>
+</ul>
 <pre><code>npx cypress open
 </code></pre>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Code Snippets" duration="3">
-        <p>To include code snippets you can do a few things.</p>
 <ul>
-<li>Inline highlighting can be done using the tiny tick mark on your keyboard: &#34;`&#34;</li>
-<li>Embedded code</li>
+<li>L&#39;interface suivante devrait s&#39;afficher</li>
 </ul>
-<h2 is-upgraded>JavaScript</h2>
-<pre><code>{
-  key1: &#34;string&#34;,
-  key2: integer,
-  key3: &#34;string&#34;
-}
-</code></pre>
-<h2 is-upgraded>Java</h2>
-<pre><code>for (statement 1; statement 2; statement 3) {
-  // code block to be executed
-}
-</code></pre>
+<p class="image-container"><img alt="interface accueil cypress" src="img/28c660fafaaefb4a.png"></p>
+<ul>
+<li>Lancer un test simple: cliquer sur le test <code>hello.spec.js</code></li>
+</ul>
+<p class="image-container"><img alt="premier test" src="img/ba4a8b3acc69819b.gif"></p>
+<p>Vous êtes maintenant prêt! 💪</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Hyperlinking and Embedded Images" duration="0">
-        <p><a href="https://www.youtube.com/user/iamhalsey/playlists" target="_blank">Youtube - Halsey Playlists</a></p>
-<h2 is-upgraded>Images</h2>
-<p class="image-container"><img alt="alt-text-here" src="img/70449ab1c23cd70.jpg"></p>
+      <google-codelab-step label="Critical Flow" duration="20">
+        <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.</p>
+<ul>
+<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+</ul>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code></p>
+</aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Other Stuff" duration="1">
-        <p>Checkout the official documentation here: <a href="https://github.com/googlecodelabs/tools/blob/master/FORMAT-GUIDE.md" target="_blank">Codelab Formatting Guide</a></p>
+      <google-codelab-step label="Hooks et factorisation" duration="20">
+        <p>Dans ce test, nous allons tester la fonctionnalité d&#39;authentification de manière exhaustive.</p>
+<ul>
+<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+<li>Vous verrez qu&#39;il y a des duplications dans le code au niveau de la commande <code>visit</code>. Pour y remédier, pensez que vous êtes dans un environnement <code>Mocha</code> : vous avez donc à votre disposition les <a href="https://mochajs.org/#hooks" target="_blank">hooks</a></li>
+<li>Autre duplication visible =&gt; La validation de la présence du message d&#39;erreur. Vous pouvez écrire une fonction pour factoriser cette partie (<code>C&#39;est juste du JavaScript</code> 😉)</li>
+</ul>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Intercepter les requêtes XHR 🤯" duration="20">
+        <p>Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines.<br>Lorsqu&#39;on lance le test, celui-ci échoue, néanmoins : l&#39;article n&#39;existe pas côté serveur (il a pu être modifié ou autre).</p>
+<p>Pour s&#39;afficher, la page <code>article</code> lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l&#39;article et une<br>autre pour récupérer les commentaires liés à cet article.</p>
+<p>Nous allons utiliser les commandes <a href="https://docs.cypress.io/api/commands/server.html" target="_blank">cy.server</a> et <a href="https://docs.cypress.io/api/commands/route.html" target="_blank">cy.route</a> pour contrôler les appels réseaux qui nous intéressent !</p>
+<p>Une fois le premier test passé. Nous allons utilisé la commande <code>cy.route</code> dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Les custom commands" duration="20">
+        <p>Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de <code>login</code> est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de <code>settings</code> par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html" target="_blank">custom command</a> qui nous permettra de nous authentifié facilement dans nos tests.</p>
+<p>Si reprendre le code que l&#39;on a vu lors dans notre test de la page <code>login</code> peut être tentant, ce n&#39;est cependant pas la méthode la plus efficace. Plutôt que d&#39;utiliser l&#39;interface pour s&#39;authentifier, nous allons le faire de manière programmatique ! 👨‍💻</p>
+<p>Dans le fichier <code>commands.js</code> qui se trouve dans le répertoire <code>support</code>, la commande <code>login</code> est déjà déclarée pour vous. Utiliser la commande <a href="https://docs.cypress.io/api/commands/request.html" target="_blank">cy.request</a> pour faire une requête <code>POST</code> sur le endpoint d&#39;authentification <code>https://docs.cypress.io/api/commands/request.html</code> puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d&#39;un point de vue applicatif !</p>
+<pre><code>window.localStorage.setItem(&#39;jwt&#39;, token)
+</code></pre>
+<aside class="special"><p>Pour que votre <code>custom command</code> soit au top 👌 :<br> - contrôler la manière dont elle loggue dans le panel de commande <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging</a><br> - faites un fichier de définition Typescript pour avoir la complétion de votre command <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions</a></p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Bonus 🎁" duration="0">
+        <p>Vous êtes arrivés jusque là dans le temps imparti, bravo! 🎉</p>
+<p>Si vous avez encore du temps, nous pouvons voir les sujets suivants :</p>
+<ol type="1">
+<li>La CICD</li>
+<li>Test unitaire de composant</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Bonus - CICD" duration="0">
+        <p>Utiliser Cypress en local avec une interface graphique, c&#39;est bien. Utiliser nos tests dans le cadre d&#39;une intégration continue, c&#39;est mieux ! Nous allons découvrir comment exécuter nos tests en mode <em>headless</em>, utiliser le <em>dashboard service</em> de Cypress et une intégration continue sur le cloud : <em>CircleCI</em>.</p>
+<h2 is-upgraded>Le mode headless</h2>
+<p>La commande <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run" target="_blank">run</a> de Cypress permet de lancer nos tests en mode <em>headless</em> (c&#39;est-à-dire, sans avoir besoin d&#39;interface graphique).</p>
+<p>Dans le fichier <code>package.json</code>, définissez un script <code>cypress:run</code> qui va exécuter en mode <em>headless</em> tous les tests contenu dans le dossier <code>cypress/integration/devoxx</code>.</p>
+<pre><code>&#34;cypress:run&#34;: &#34;cypress run -s &#39;cypress/integration/devoxx/**&#39;&#34;
+</code></pre>
+<pre><code>npm run cypress:run
+</code></pre>
+<h2 is-upgraded>Enregistrer vos exécutions de tests</h2>
+<aside class="warning"><p>Pré-requis : avoir un compte Github</p>
+</aside>
+<p>Avec l&#39;option <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run-record-key-lt-record-key-gt" target="_blank">record</a>, nous allons pouvoir enregistrer différentes exécutions :</p>
+<ul>
+<li>Lancer l&#39;interface de Cypress</li>
+<li>S&#39;authentifier en cliquant sur le bouton <code>Log In</code> en haut à droite</li>
+<li>Une fois authentifié, vous pouvez maintenant aller sur la partie <code>Runs</code> de l&#39;interface, ensuite cliquer sur le bouton <code>Set up project to record</code></li>
+<li>Définissez un nom ainsi que l&#39;organisation, puis valider (laissez votre projet en public)</li>
+</ul>
+<p>Un <code>projectId</code> sera défini et sera automatiquement ajouté à votre fichier de configuration Cypress <code>cypress.json</code> 👌. Pensez à commité ce fichier.</p>
+<p>Une ligne de commande <code>cypress run</code> sera affiché avec le paramètre <code>key</code> positionné. Prenez cette ligne de commande et exécutez-la dans votre terminal : votre test est en train d&#39;être enregistré !</p>
+<ul>
+<li>Avec un navigateur, allez sur le <a href="https://dashboard.cypress.io/#/login" target="_blank">dashboard service</a> et validez que vos tests sont bien présents</li>
+<li>Prenez le temps de découvrir le <em>dashboard</em></li>
+</ul>
+<h2 is-upgraded>CICD sur le cloud</h2>
+<p>Dans cette partie, nous allons utiliser <a href="https://circleci.com/" target="_blank">CircleCI</a>. Cypress peut évidemment s&#39;interfacer avec de nombreuses solutions de CI (voir les <a href="https://docs.cypress.io/guides/guides/continuous-integration.html#Examples" target="_blank">exemples</a>). Cependant, la tâche est plus facile avec CircleCI grâce à l&#39;<a href="https://github.com/cypress-io/circleci-orb" target="_blank">orbe Cypress</a> !</p>
+<ol type="1">
+<li>Créez un compte sur CircleCI</li>
+<li>Pushez le code du projet sur un <em>repository</em> de votre compte Github</li>
+<li>Dans CircleCI, déclarez votre projet fraichement créé (dans la partie <code>Add projects</code>)</li>
+<li>Pensez à positionner la variable d&#39;environnement <code>CYPRESS_RECORD_KEY</code> avec la clé qui a été généré en 1ère partie</li>
+<li>Lancer un <em>build</em> (via CircleCI ou en poussant du code votre <em>repository</em>)</li>
+<li>Une fois le <em>build</em> achevé, allez dans le <a href="https://dashboard.cypress.io" target="_blank">dashboard service</a> et regardez les différents résultats des tests ainsi que leur temps d&#39;exécution.</li>
+</ol>
+<p>Comment ça marche ?</p>
+<ul>
+<li>Jetez un coup d&#39;oeil au fichier <code>circle.yml</code></li>
+<li>La <a href="https://docs.cypress.io/guides/guides/continuous-integration.html#Example-CircleCI-Orb" target="_blank">documentation Cypress</a> relative à la CICD avec CircleCI</li>
+<li>La <a href="https://github.com/cypress-io/circleci-orb" target="_blank">doxumentation de l&#39;orbe Cypress</a></li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Bonus - Test de composant" duration="0">
+        <p>Dans ce test, nous allons tester un composant de manière isolé, en faisant le focus sur la bannière présente lorsqu&#39;il n&#39;y a pas d&#39;utilisateur connecté.</p>
+<p>L&#39;application étant en React, nous allons utiliser le plugin <a href="https://github.com/bahmutov/cypress-react-unit-test" target="_blank">cypress-react-unit-test</a></p>
+<ul>
+<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+</ul>
+<p>⚠️ La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code> ⚠️</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Merci 🙏" duration="3">
+        <p>Nous espérons que vous avez apprécié ce workshop et que vous allez très vite utiliser Cypress!</p>
+<h2 is-upgraded>Feedback</h2>
+<p class="image-container"><img alt="feedback bdxio" src="img/eef18a330affae10.png"></p>
+<p><a href="https://openfeedback.io/3BQH3sLpx0EfLHHC7Wng/2019-11-15/33" target="_blank">https://openfeedback.io/3BQH3sLpx0EfLHHC7Wng/2019-11-15/33</a></p>
+<h2 is-upgraded>Gagnez un tshirt Cypress</h2>
+<p>Remplissez le questionnaire: <a href="https://link.cypress.io/rodolphe-f" target="_blank">https://link.cypress.io/rodolphe-f</a></p>
+<h2 is-upgraded>Nous contacter</h2>
+<p>Sur Twitter</p>
+<ul>
+<li><a href="https://twitter.com/JkNourry" target="_blank">@JkNourry</a></li>
+<li><a href="https://twitter.com/rodbung" target="_blank">@rodbung</a></li>
+</ul>
 
 
       </google-codelab-step>
