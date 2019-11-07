@@ -27,7 +27,7 @@
                   environment="web"
                   feedback-link="TODO">
     
-      <google-codelab-step label="Bienvenue 🤗" duration="2">
+      <google-codelab-step label="Bienvenue 🤗" duration="10">
         <p>Bienvenue dans ce workshop dédié à Cypress! Nous espérons qu&#39;il vous plaira!</p>
 <h2 is-upgraded>Ce que vous allez apprendre</h2>
 <ul>
@@ -48,7 +48,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="Avant de commencer ✋" duration="20">
+      <google-codelab-step label="Avant de commencer ✋" duration="15">
         <h2 is-upgraded>Pré-requis</h2>
 <ul>
 <li>Avoir une connection internet</li>
@@ -89,7 +89,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Critical Flow" duration="20">
+      <google-codelab-step label="Critical Flow" duration="15">
         <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.</p>
 <ul>
 <li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
@@ -100,7 +100,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Hooks et factorisation" duration="20">
+      <google-codelab-step label="Hooks et factorisation" duration="15">
         <p>Dans ce test, nous allons tester la fonctionnalité d&#39;authentification de manière exhaustive.</p>
 <ul>
 <li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
@@ -113,7 +113,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Intercepter les requêtes XHR 🤯" duration="20">
+      <google-codelab-step label="Intercepter les requêtes XHR 🤯" duration="15">
         <p>Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines.<br>Lorsqu&#39;on lance le test, celui-ci échoue, néanmoins : l&#39;article n&#39;existe pas côté serveur (il a pu être modifié ou autre).</p>
 <p>Pour s&#39;afficher, la page <code>article</code> lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l&#39;article et une<br>autre pour récupérer les commentaires liés à cet article.</p>
 <p>Nous allons utiliser les commandes <a href="https://docs.cypress.io/api/commands/server.html" target="_blank">cy.server</a> et <a href="https://docs.cypress.io/api/commands/route.html" target="_blank">cy.route</a> pour contrôler les appels réseaux qui nous intéressent !</p>
@@ -122,7 +122,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Les custom commands" duration="20">
+      <google-codelab-step label="Les custom commands" duration="15">
         <p>Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de <code>login</code> est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de <code>settings</code> par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html" target="_blank">custom command</a> qui nous permettra de nous authentifié facilement dans nos tests.</p>
 <p>Si reprendre le code que l&#39;on a vu lors dans notre test de la page <code>login</code> peut être tentant, ce n&#39;est cependant pas la méthode la plus efficace. Plutôt que d&#39;utiliser l&#39;interface pour s&#39;authentifier, nous allons le faire de manière programmatique ! 👨‍💻</p>
 <p>Dans le fichier <code>commands.js</code> qui se trouve dans le répertoire <code>support</code>, la commande <code>login</code> est déjà déclarée pour vous. Utiliser la commande <a href="https://docs.cypress.io/api/commands/request.html" target="_blank">cy.request</a> pour faire une requête <code>POST</code> sur le endpoint d&#39;authentification <code>https://docs.cypress.io/api/commands/request.html</code> puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d&#39;un point de vue applicatif !</p>
@@ -201,7 +201,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Merci 🙏" duration="3">
+      <google-codelab-step label="Merci 🙏" duration="5">
         <p>Nous espérons que vous avez apprécié ce workshop et que vous allez très vite utiliser Cypress!</p>
 <h2 is-upgraded>Feedback</h2>
 <p class="image-container"><img alt="feedback bdxio" src="img/eef18a330affae10.png"></p>

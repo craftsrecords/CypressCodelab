@@ -12,7 +12,7 @@ feedback link: TODO
 
 ## Bienvenue 🤗
 
-Duration: 2
+Duration: 10
 
 Bienvenue dans ce workshop dédié à Cypress! Nous espérons qu'il vous plaira!
 
@@ -36,7 +36,7 @@ N'hésitez pas à:
 
 ## Avant de commencer ✋
 
-Duration: 20
+Duration: 15
 
 ### Pré-requis
 
@@ -89,7 +89,7 @@ Vous êtes maintenant prêt! 💪
 
 ## Critical Flow
 
-Duration: 20
+Duration: 15
 
 Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L'objectif est de balayer l'ensemble des pages et de vérifier qu'elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.
 
@@ -100,7 +100,7 @@ Negative
 
 ## Hooks et factorisation
 
-Duration: 20
+Duration: 15
 
 Dans ce test, nous allons tester la fonctionnalité d'authentification de manière exhaustive.
 
@@ -113,7 +113,7 @@ Negative
 
 ## Intercepter les requêtes XHR 🤯
 
-Duration: 20
+Duration: 15
 
 Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines.
 Lorsqu'on lance le test, celui-ci échoue, néanmoins : l'article n'existe pas côté serveur (il a pu être modifié ou autre).
@@ -127,7 +127,7 @@ Une fois le premier test passé. Nous allons utilisé la commande `cy.route` dan
 
 ## Les custom commands
 
-Duration: 20
+Duration: 15
 
 Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de `login` est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de `settings` par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une [custom command](https://docs.cypress.io/api/cypress-api/custom-commands.html) qui nous permettra de nous authentifié facilement dans nos tests.
 
@@ -221,7 +221,7 @@ L'application étant en React, nous allons utiliser le plugin [cypress-react-uni
 
 ## Merci 🙏
 
-Duration: 3
+Duration: 5
 
 Nous espérons que vous avez apprécié ce workshop et que vous allez très vite utiliser Cypress!
 
