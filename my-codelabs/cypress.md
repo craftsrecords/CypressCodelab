@@ -87,7 +87,7 @@ Vous êtes maintenant prêt! 💪
 
 <!-- ------------------------ -->
 
-## Critical Flow
+## Critical Flow 🚨
 
 Duration: 15
 
@@ -98,7 +98,7 @@ Dans ce test, nous allons tester les principales fonctionnalités proposées par
 Negative
 : La solution de l'exercice se trouve dans le fichier `answer.js`
 
-## Hooks et factorisation
+## Hooks et factorisation 👩‍💻
 
 Duration: 15
 
@@ -125,7 +125,7 @@ Nous allons utiliser les commandes [cy.server](https://docs.cypress.io/api/comma
 
 Une fois le premier test passé. Nous allons utilisé la commande `cy.route` dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.
 
-## Les custom commands
+## Les custom commands 😎
 
 Duration: 15
 
@@ -136,7 +136,7 @@ Si reprendre le code que l'on a vu lors dans notre test de la page `login` peut 
 Dans le fichier `commands.js` qui se trouve dans le répertoire `support`, la commande `login` est déjà déclarée pour vous. Utiliser la commande [cy.request](https://docs.cypress.io/api/commands/request.html) pour faire une requête `POST` sur le endpoint d'authentification `https://docs.cypress.io/api/commands/request.html` puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d'un point de vue applicatif !
 
 ```javascript
-window.localStorage.setItem('jwt', token)
+window.localStorage.setItem("jwt", token);
 ```
 
 Positive
@@ -151,7 +151,7 @@ Si vous avez encore du temps, nous pouvons voir les sujets suivants :
 1. La CICD
 2. Test unitaire de composant
 
-## Bonus - CICD
+## Bonus - CICD 🛠
 
 Utiliser Cypress en local avec une interface graphique, c'est bien. Utiliser nos tests dans le cadre d'une intégration continue, c'est mieux ! Nous allons découvrir comment exécuter nos tests en mode _headless_, utiliser le _dashboard service_ de Cypress et une intégration continue sur le cloud : _CircleCI_.
 
@@ -203,11 +203,11 @@ Comment ça marche ?
 
 - Jetez un coup d'oeil au fichier `circle.yml`
 - La [documentation Cypress](https://docs.cypress.io/guides/guides/continuous-integration.html#Example-CircleCI-Orb) relative à la CICD avec CircleCI
-- La [doxumentation de l'orbe Cypress](https://github.com/cypress-io/circleci-orb)
+- La [documentation de l'orbe Cypress](https://github.com/cypress-io/circleci-orb)
 
 <!-- ------------------------ -->
 
-## Bonus - Test de composant
+## Bonus - Test de composant 💃🕺
 
 Dans ce test, nous allons tester un composant de manière isolé, en faisant le focus sur la bannière présente lorsqu'il n'y a pas d'utilisateur connecté.
 

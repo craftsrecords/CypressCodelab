@@ -89,7 +89,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Critical Flow" duration="15">
+      <google-codelab-step label="Critical Flow 🚨" duration="15">
         <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.</p>
 <ul>
 <li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
@@ -100,7 +100,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Hooks et factorisation" duration="15">
+      <google-codelab-step label="Hooks et factorisation 👩‍💻" duration="15">
         <p>Dans ce test, nous allons tester la fonctionnalité d&#39;authentification de manière exhaustive.</p>
 <ul>
 <li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
@@ -122,11 +122,11 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Les custom commands" duration="15">
+      <google-codelab-step label="Les custom commands 😎" duration="15">
         <p>Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de <code>login</code> est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de <code>settings</code> par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html" target="_blank">custom command</a> qui nous permettra de nous authentifié facilement dans nos tests.</p>
 <p>Si reprendre le code que l&#39;on a vu lors dans notre test de la page <code>login</code> peut être tentant, ce n&#39;est cependant pas la méthode la plus efficace. Plutôt que d&#39;utiliser l&#39;interface pour s&#39;authentifier, nous allons le faire de manière programmatique ! 👨‍💻</p>
 <p>Dans le fichier <code>commands.js</code> qui se trouve dans le répertoire <code>support</code>, la commande <code>login</code> est déjà déclarée pour vous. Utiliser la commande <a href="https://docs.cypress.io/api/commands/request.html" target="_blank">cy.request</a> pour faire une requête <code>POST</code> sur le endpoint d&#39;authentification <code>https://docs.cypress.io/api/commands/request.html</code> puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d&#39;un point de vue applicatif !</p>
-<pre><code>window.localStorage.setItem(&#39;jwt&#39;, token)
+<pre><code>window.localStorage.setItem(&#34;jwt&#34;, token);
 </code></pre>
 <aside class="special"><p>Pour que votre <code>custom command</code> soit au top 👌 :<br> - contrôler la manière dont elle loggue dans le panel de commande <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging</a><br> - faites un fichier de définition Typescript pour avoir la complétion de votre command <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions</a></p>
 </aside>
@@ -145,7 +145,7 @@ npm install
 
       </google-codelab-step>
     
-      <google-codelab-step label="Bonus - CICD" duration="0">
+      <google-codelab-step label="Bonus - CICD 🛠" duration="0">
         <p>Utiliser Cypress en local avec une interface graphique, c&#39;est bien. Utiliser nos tests dans le cadre d&#39;une intégration continue, c&#39;est mieux ! Nous allons découvrir comment exécuter nos tests en mode <em>headless</em>, utiliser le <em>dashboard service</em> de Cypress et une intégration continue sur le cloud : <em>CircleCI</em>.</p>
 <h2 is-upgraded>Le mode headless</h2>
 <p>La commande <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run" target="_blank">run</a> de Cypress permet de lancer nos tests en mode <em>headless</em> (c&#39;est-à-dire, sans avoir besoin d&#39;interface graphique).</p>
@@ -184,13 +184,13 @@ npm install
 <ul>
 <li>Jetez un coup d&#39;oeil au fichier <code>circle.yml</code></li>
 <li>La <a href="https://docs.cypress.io/guides/guides/continuous-integration.html#Example-CircleCI-Orb" target="_blank">documentation Cypress</a> relative à la CICD avec CircleCI</li>
-<li>La <a href="https://github.com/cypress-io/circleci-orb" target="_blank">doxumentation de l&#39;orbe Cypress</a></li>
+<li>La <a href="https://github.com/cypress-io/circleci-orb" target="_blank">documentation de l&#39;orbe Cypress</a></li>
 </ul>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Bonus - Test de composant" duration="0">
+      <google-codelab-step label="Bonus - Test de composant 💃🕺" duration="0">
         <p>Dans ce test, nous allons tester un composant de manière isolé, en faisant le focus sur la bannière présente lorsqu&#39;il n&#39;y a pas d&#39;utilisateur connecté.</p>
 <p>L&#39;application étant en React, nous allons utiliser le plugin <a href="https://github.com/bahmutov/cypress-react-unit-test" target="_blank">cypress-react-unit-test</a></p>
 <ul>
