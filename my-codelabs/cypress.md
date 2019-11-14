@@ -224,13 +224,37 @@ Comment ça marche ?
 
 ## Bonus - Test de composant 💃🕺
 
-Dans ce test, nous allons tester un composant de manière isolé, en faisant le focus sur la bannière présente lorsqu'il n'y a pas d'utilisateur connecté.
+Dans ce test, nous allons tester un composant de manière isolé. Pour notre exemple nous allons tester le composant `Banner`.
+
+```javascript
+import React from "react";
+
+const Banner = ({ appName, token }) => {
+  if (token) {
+    return null;
+  }
+  return (
+    <div className="banner">
+      <div className="container">
+        <h1 className="logo-font">{appName.toLowerCase()}</h1>
+        <p>A place to share your knowledge.</p>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
+```
 
 L'application étant en React, nous allons utiliser le plugin [cypress-react-unit-test](https://github.com/bahmutov/cypress-react-unit-test)
 
-- Dans le fichier `spec.js`, compléter the TODOs.
+- Dans le fichier `cypress/integration/04-component.spec.js`, compléter the TODOs.
 
-⚠️ La solution de l'exercice se trouve dans le fichier `answer.js` ⚠️
+Positive
+: Cypress permet de tester aussi des composants développés avec d'autres technos: Angular, Vue, Cycle, Svelte, Hyperapp: <https://docs.cypress.io/plugins/index.html#component-testing>
+
+Negative
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/04-component.answer.spec.js`
 
 <!-- ------------------------ -->
 

@@ -208,12 +208,33 @@ npm install
       </google-codelab-step>
     
       <google-codelab-step label="Bonus - Test de composant 💃🕺" duration="0">
-        <p>Dans ce test, nous allons tester un composant de manière isolé, en faisant le focus sur la bannière présente lorsqu&#39;il n&#39;y a pas d&#39;utilisateur connecté.</p>
+        <p>Dans ce test, nous allons tester un composant de manière isolé. Pour notre exemple nous allons tester le composant <code>Banner</code>.</p>
+<pre><code>import React from &#34;react&#34;;
+
+const Banner = ({ appName, token }) =&gt; {
+  if (token) {
+    return null;
+  }
+  return (
+    &lt;div className=&#34;banner&#34;&gt;
+      &lt;div className=&#34;container&#34;&gt;
+        &lt;h1 className=&#34;logo-font&#34;&gt;{appName.toLowerCase()}&lt;/h1&gt;
+        &lt;p&gt;A place to share your knowledge.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default Banner;
+</code></pre>
 <p>L&#39;application étant en React, nous allons utiliser le plugin <a href="https://github.com/bahmutov/cypress-react-unit-test" target="_blank">cypress-react-unit-test</a></p>
 <ul>
-<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+<li>Dans le fichier <code>cypress/integration/04-component.spec.js</code>, compléter the TODOs.</li>
 </ul>
-<p>⚠️ La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code> ⚠️</p>
+<aside class="special"><p>Cypress permet de tester aussi des composants développés avec d&#39;autres technos: Angular, Vue, Cycle, Svelte, Hyperapp: <a href="https://docs.cypress.io/plugins/index.html#component-testing" target="_blank">https://docs.cypress.io/plugins/index.html#component-testing</a></p>
+</aside>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/04-component.answer.spec.js</code></p>
+</aside>
 
 
       </google-codelab-step>
