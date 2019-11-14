@@ -96,9 +96,9 @@ npm install
 </ul>
 <aside class="special"><p>Jouer avec le <a href="https://docs.cypress.io/api/cypress-api/selector-playground-api.html#Syntax" target="_blank">Selector Playground</a> pour trouver les éléments sur lesquels vous allez faire des <a href="https://docs.cypress.io/guides/references/assertions.html#Common-Assertions" target="_blank">assertions</a></p>
 </aside>
-<aside class="special"><p>Noter qu&#39;à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode <a href="https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests" target="_blank">watch</a> sur le répertoire <code>integration</code> 👀</p>
+<aside class="special"><p>Noter qu&#39;à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode <a href="https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests" target="_blank">watch</a> sur le répertoire <code>integration</code> 👀 Noter aussi que si vous utilisez un éditeur évolué (comme <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>), vous avez aussi la complétion, cela est grâce au fichier <code>cypress/tsconfig.json</code>. N&#39;hésitez pas à regarder son contenu.</p>
 </aside>
-<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/01-critical-flow.spec.js</code></p>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/01-critical-flow.answer.spec.js</code></p>
 </aside>
 
 
@@ -107,11 +107,12 @@ npm install
       <google-codelab-step label="Hooks et factorisation 👩‍💻" duration="15">
         <p>Dans ce test, nous allons tester la fonctionnalité d&#39;authentification de manière exhaustive.</p>
 <ul>
-<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+<li>Dans l&#39;interface de Cypress, arrêter le test de l&#39;exercice précédent et exécuter le test <code>02-login.spec.js</code></li>
+<li>Dans le fichier <code>cypress/integration/02-login.spec.js</code>, compléter the TODOs.</li>
 <li>Vous verrez qu&#39;il y a des duplications dans le code au niveau de la commande <code>visit</code>. Pour y remédier, pensez que vous êtes dans un environnement <code>Mocha</code> : vous avez donc à votre disposition les <a href="https://mochajs.org/#hooks" target="_blank">hooks</a></li>
-<li>Autre duplication visible =&gt; La validation de la présence du message d&#39;erreur. Vous pouvez écrire une fonction pour factoriser cette partie (<code>C&#39;est juste du JavaScript</code> 😉)</li>
+<li>Autre duplication visible: la validation de la présence du message d&#39;erreur. Vous pouvez écrire une fonction pour factoriser cette partie (<code>C&#39;est juste du JavaScript</code> 😉)</li>
 </ul>
-<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code></p>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/02-login.answer.spec</code></p>
 </aside>
 
 

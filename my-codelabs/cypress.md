@@ -99,10 +99,10 @@ Positive
 : Jouer avec le [Selector Playground](https://docs.cypress.io/api/cypress-api/selector-playground-api.html#Syntax) pour trouver les éléments sur lesquels vous allez faire des [assertions](https://docs.cypress.io/guides/references/assertions.html#Common-Assertions)
 
 Positive
-: Noter qu'à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode [watch](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests) sur le répertoire `integration` 👀
+: Noter qu'à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode [watch](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests) sur le répertoire `integration` 👀 Noter aussi que si vous utilisez un éditeur évolué (comme [VS Code](https://code.visualstudio.com/)), vous avez aussi la complétion, cela est grâce au fichier `cypress/tsconfig.json`. N'hésitez pas à regarder son contenu.
 
 Negative
-: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/01-critical-flow.spec.js`
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/01-critical-flow.answer.spec.js`
 
 ## Hooks et factorisation 👩‍💻
 
@@ -110,12 +110,13 @@ Duration: 15
 
 Dans ce test, nous allons tester la fonctionnalité d'authentification de manière exhaustive.
 
-- Dans le fichier `spec.js`, compléter the TODOs.
+- Dans l'interface de Cypress, arrêter le test de l'exercice précédent et exécuter le test `02-login.spec.js`
+- Dans le fichier `cypress/integration/02-login.spec.js`, compléter the TODOs.
 - Vous verrez qu'il y a des duplications dans le code au niveau de la commande `visit`. Pour y remédier, pensez que vous êtes dans un environnement `Mocha` : vous avez donc à votre disposition les [hooks](https://mochajs.org/#hooks)
-- Autre duplication visible => La validation de la présence du message d'erreur. Vous pouvez écrire une fonction pour factoriser cette partie (`C'est juste du JavaScript` 😉)
+- Autre duplication visible: la validation de la présence du message d'erreur. Vous pouvez écrire une fonction pour factoriser cette partie (`C'est juste du JavaScript` 😉)
 
 Negative
-: La solution de l'exercice se trouve dans le fichier `answer.js`
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/02-login.answer.spec`
 
 ## Intercepter les requêtes XHR 🤯
 
