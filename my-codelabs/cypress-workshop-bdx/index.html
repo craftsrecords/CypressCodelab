@@ -166,18 +166,15 @@ npm install
       </google-codelab-step>
     
       <google-codelab-step label="Bonus - CICD 🛠" duration="0">
-        <p>Utiliser Cypress en local avec une interface graphique, c&#39;est bien. Utiliser nos tests dans le cadre d&#39;une intégration continue, c&#39;est mieux ! Nous allons découvrir comment exécuter nos tests en mode <em>headless</em>, utiliser le <em>dashboard service</em> de Cypress et une intégration continue sur le cloud : <em>CircleCI</em>.</p>
+        <p>Utiliser Cypress en local avec une interface graphique, c&#39;est bien. Utiliser nos tests dans le cadre d&#39;une intégration continue, c&#39;est mieux! Nous allons découvrir comment exécuter nos tests en mode <em>headless</em>, utiliser le <em>dashboard service</em> de Cypress et une intégration continue sur le cloud: <em>CircleCI</em>.</p>
 <h2 is-upgraded>Le mode headless</h2>
-<p>La commande <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run" target="_blank">run</a> de Cypress permet de lancer nos tests en mode <em>headless</em> (c&#39;est-à-dire, sans avoir besoin d&#39;interface graphique).</p>
-<p>Dans le fichier <code>package.json</code>, définissez un script <code>cypress:run</code> qui va exécuter en mode <em>headless</em> tous les tests contenu dans le dossier <code>cypress/integration/devoxx</code>.</p>
-<pre><code>&#34;cypress:run&#34;: &#34;cypress run -s &#39;cypress/integration/devoxx/**&#39;&#34;
-</code></pre>
-<pre><code>npm run cypress:run
+<p>La commande <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run" target="_blank">run</a> de Cypress permet de lancer tout nos tests en mode <em>headless</em> (c&#39;est-à-dire, sans avoir besoin d&#39;interface graphique).</p>
+<pre><code>npx cypress run
 </code></pre>
 <h2 is-upgraded>Enregistrer vos exécutions de tests</h2>
-<aside class="warning"><p>Pré-requis : avoir un compte Github</p>
+<aside class="warning"><p>Pré-requis: avoir un compte Github</p>
 </aside>
-<p>Avec l&#39;option <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run-record-key-lt-record-key-gt" target="_blank">record</a>, nous allons pouvoir enregistrer différentes exécutions :</p>
+<p>Avec l&#39;option <a href="https://docs.cypress.io/guides/guides/command-line.html#cypress-run-record-key-lt-record-key-gt" target="_blank">record</a>, nous allons pouvoir enregistrer différentes exécutions:</p>
 <ul>
 <li>Lancer l&#39;interface de Cypress</li>
 <li>S&#39;authentifier en cliquant sur le bouton <code>Log In</code> en haut à droite</li>
@@ -185,7 +182,7 @@ npm install
 <li>Définissez un nom ainsi que l&#39;organisation, puis valider (laissez votre projet en public)</li>
 </ul>
 <p>Un <code>projectId</code> sera défini et sera automatiquement ajouté à votre fichier de configuration Cypress <code>cypress.json</code> 👌. Pensez à commité ce fichier.</p>
-<p>Une ligne de commande <code>cypress run</code> sera affiché avec le paramètre <code>key</code> positionné. Prenez cette ligne de commande et exécutez-la dans votre terminal : votre test est en train d&#39;être enregistré !</p>
+<p>Une ligne de commande <code>cypress run</code> sera affiché avec le paramètre <code>key</code> positionné. Prenez cette ligne de commande et exécutez-la dans votre terminal: votre test est en train d&#39;être enregistré!</p>
 <ul>
 <li>Avec un navigateur, allez sur le <a href="https://dashboard.cypress.io/#/login" target="_blank">dashboard service</a> et validez que vos tests sont bien présents</li>
 <li>Prenez le temps de découvrir le <em>dashboard</em></li>

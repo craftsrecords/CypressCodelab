@@ -174,28 +174,22 @@ Si vous avez encore du temps, nous pouvons voir les sujets suivants:
 
 ## Bonus - CICD 🛠
 
-Utiliser Cypress en local avec une interface graphique, c'est bien. Utiliser nos tests dans le cadre d'une intégration continue, c'est mieux ! Nous allons découvrir comment exécuter nos tests en mode _headless_, utiliser le _dashboard service_ de Cypress et une intégration continue sur le cloud : _CircleCI_.
+Utiliser Cypress en local avec une interface graphique, c'est bien. Utiliser nos tests dans le cadre d'une intégration continue, c'est mieux! Nous allons découvrir comment exécuter nos tests en mode _headless_, utiliser le _dashboard service_ de Cypress et une intégration continue sur le cloud: _CircleCI_.
 
 ### Le mode headless
 
-La commande [run](https://docs.cypress.io/guides/guides/command-line.html#cypress-run) de Cypress permet de lancer nos tests en mode _headless_ (c'est-à-dire, sans avoir besoin d'interface graphique).
-
-Dans le fichier `package.json`, définissez un script `cypress:run` qui va exécuter en mode _headless_ tous les tests contenu dans le dossier `cypress/integration/devoxx`.
-
-```javascript
-"cypress:run": "cypress run -s 'cypress/integration/devoxx/**'"
-```
+La commande [run](https://docs.cypress.io/guides/guides/command-line.html#cypress-run) de Cypress permet de lancer tout nos tests en mode _headless_ (c'est-à-dire, sans avoir besoin d'interface graphique).
 
 ```bash
-npm run cypress:run
+npx cypress run
 ```
 
 ### Enregistrer vos exécutions de tests
 
 Negative
-: Pré-requis : avoir un compte Github
+: Pré-requis: avoir un compte Github
 
-Avec l'option [record](https://docs.cypress.io/guides/guides/command-line.html#cypress-run-record-key-lt-record-key-gt), nous allons pouvoir enregistrer différentes exécutions :
+Avec l'option [record](https://docs.cypress.io/guides/guides/command-line.html#cypress-run-record-key-lt-record-key-gt), nous allons pouvoir enregistrer différentes exécutions:
 
 - Lancer l'interface de Cypress
 - S'authentifier en cliquant sur le bouton `Log In` en haut à droite
@@ -204,7 +198,7 @@ Avec l'option [record](https://docs.cypress.io/guides/guides/command-line.html#c
 
 Un `projectId` sera défini et sera automatiquement ajouté à votre fichier de configuration Cypress `cypress.json` 👌. Pensez à commité ce fichier.
 
-Une ligne de commande `cypress run` sera affiché avec le paramètre `key` positionné. Prenez cette ligne de commande et exécutez-la dans votre terminal : votre test est en train d'être enregistré !
+Une ligne de commande `cypress run` sera affiché avec le paramètre `key` positionné. Prenez cette ligne de commande et exécutez-la dans votre terminal: votre test est en train d'être enregistré!
 
 - Avec un navigateur, allez sur le [dashboard service](https://dashboard.cypress.io/#/login) et validez que vos tests sont bien présents
 - Prenez le temps de découvrir le _dashboard_
