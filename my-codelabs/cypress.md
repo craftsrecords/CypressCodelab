@@ -143,24 +143,31 @@ Negative
 
 Duration: 15
 
-Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de `login` est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de `settings` par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une [custom command](https://docs.cypress.io/api/cypress-api/custom-commands.html) qui nous permettra de nous authentifié facilement dans nos tests.
+Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de `login` est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de `settings` par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une [custom command](https://docs.cypress.io/api/cypress-api/custom-commands.html) qui nous permettra de nous authentifier facilement dans nos tests.
 
-Si reprendre le code que l'on a vu lors dans notre test de la page `login` peut être tentant, ce n'est cependant pas la méthode la plus efficace. Plutôt que d'utiliser l'interface pour s'authentifier, nous allons le faire de manière programmatique ! 👨‍💻
+Si reprendre le code que l'on a vu lors dans notre test de la page `login` peut être tentant, ce n'est cependant pas la méthode la plus efficace! Plutôt que d'utiliser l'interface pour s'authentifier, nous allons le faire de manière programmatique! 👨‍💻
 
-Dans le fichier `commands.js` qui se trouve dans le répertoire `support`, la commande `login` est déjà déclarée pour vous. Utiliser la commande [cy.request](https://docs.cypress.io/api/commands/request.html) pour faire une requête `POST` sur le endpoint d'authentification `https://docs.cypress.io/api/commands/request.html` puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d'un point de vue applicatif !
+Dans le fichier `cypress/support/commands.js`, la commande `login` est déjà déclarée pour vous. Utiliser la commande [cy.request](https://docs.cypress.io/api/commands/request.html) pour faire une requête `POST` sur le endpoint d'authentification `https://docs.cypress.io/api/commands/request.html` puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié applicativement!
 
 ```javascript
 window.localStorage.setItem("jwt", token);
 ```
 
+- Dans le fichier `cypress/integration/03-article.spec.js`, au niveau de la ligne `context.skip('In an authenticated context', function() {`, supprimer le mot clé [skip](https://mochajs.org/#inclusive-tests) ou bien le remplacer par le mot clé [only](https://mochajs.org/#exclusive-tests) (pour ne pas être embêté par la première suite de tests)
+- Implémenter votre custom command dans le fichier `cypress/support/commands.js`
+- Faire les TODOs dans le fichier `cypress/integration/03-article.spec.js`
+
 Positive
 : Pour que votre `custom command` soit au top 👌 :<br/> - contrôler la manière dont elle loggue dans le panel de commande <https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging><br/> - faites un fichier de définition Typescript pour avoir la complétion de votre command <https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions>
+
+Negative
+: La solution de l'exercice se trouve dans les fichiers `cypress/support/commands.answer.js` et `cypress/integration/answers/03-article.answer.spec.js`
 
 ## Bonus 🎁
 
 Vous êtes arrivés jusque là dans le temps imparti, bravo! 🎉
 
-Si vous avez encore du temps, nous pouvons voir les sujets suivants :
+Si vous avez encore du temps, nous pouvons voir les sujets suivants:
 
 1. La CICD
 2. Test unitaire de composant

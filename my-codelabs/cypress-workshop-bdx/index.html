@@ -136,12 +136,19 @@ npm install
       </google-codelab-step>
     
       <google-codelab-step label="Les custom commands 😎" duration="15">
-        <p>Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de <code>login</code> est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de <code>settings</code> par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html" target="_blank">custom command</a> qui nous permettra de nous authentifié facilement dans nos tests.</p>
-<p>Si reprendre le code que l&#39;on a vu lors dans notre test de la page <code>login</code> peut être tentant, ce n&#39;est cependant pas la méthode la plus efficace. Plutôt que d&#39;utiliser l&#39;interface pour s&#39;authentifier, nous allons le faire de manière programmatique ! 👨‍💻</p>
-<p>Dans le fichier <code>commands.js</code> qui se trouve dans le répertoire <code>support</code>, la commande <code>login</code> est déjà déclarée pour vous. Utiliser la commande <a href="https://docs.cypress.io/api/commands/request.html" target="_blank">cy.request</a> pour faire une requête <code>POST</code> sur le endpoint d&#39;authentification <code>https://docs.cypress.io/api/commands/request.html</code> puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié d&#39;un point de vue applicatif !</p>
+        <p>Dans la deuxième partie du test, nous devons être authentifié. La fonctionnalité de <code>login</code> est importante dans notre site. Elle peut être aussi utilisée pour afficher la page de <code>settings</code> par exemple. Pour mutualiser du code à travers les différents tests, nous allons développer une <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html" target="_blank">custom command</a> qui nous permettra de nous authentifier facilement dans nos tests.</p>
+<p>Si reprendre le code que l&#39;on a vu lors dans notre test de la page <code>login</code> peut être tentant, ce n&#39;est cependant pas la méthode la plus efficace! Plutôt que d&#39;utiliser l&#39;interface pour s&#39;authentifier, nous allons le faire de manière programmatique! 👨‍💻</p>
+<p>Dans le fichier <code>cypress/support/commands.js</code>, la commande <code>login</code> est déjà déclarée pour vous. Utiliser la commande <a href="https://docs.cypress.io/api/commands/request.html" target="_blank">cy.request</a> pour faire une requête <code>POST</code> sur le endpoint d&#39;authentification <code>https://docs.cypress.io/api/commands/request.html</code> puis utiliser la réponse pour récupérer le token et le positionner dans le local storage pour être authentifié applicativement!</p>
 <pre><code>window.localStorage.setItem(&#34;jwt&#34;, token);
 </code></pre>
+<ul>
+<li>Dans le fichier <code>cypress/integration/03-article.spec.js</code>, au niveau de la ligne <code>context.skip(&#39;In an authenticated context&#39;, function() {</code>, supprimer le mot clé <a href="https://mochajs.org/#inclusive-tests" target="_blank">skip</a> ou bien le remplacer par le mot clé <a href="https://mochajs.org/#exclusive-tests" target="_blank">only</a> (pour ne pas être embêté par la première suite de tests)</li>
+<li>Implémenter votre custom command dans le fichier <code>cypress/support/commands.js</code></li>
+<li>Faire les TODOs dans le fichier <code>cypress/integration/03-article.spec.js</code></li>
+</ul>
 <aside class="special"><p>Pour que votre <code>custom command</code> soit au top 👌 :<br> - contrôler la manière dont elle loggue dans le panel de commande <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#Command-Logging</a><br> - faites un fichier de définition Typescript pour avoir la complétion de votre command <a href="https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions" target="_blank">https://docs.cypress.io/api/cypress-api/custom-commands.html#5-Write-TypeScript-definitions</a></p>
+</aside>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans les fichiers <code>cypress/support/commands.answer.js</code> et <code>cypress/integration/answers/03-article.answer.spec.js</code></p>
 </aside>
 
 
@@ -149,7 +156,7 @@ npm install
     
       <google-codelab-step label="Bonus 🎁" duration="0">
         <p>Vous êtes arrivés jusque là dans le temps imparti, bravo! 🎉</p>
-<p>Si vous avez encore du temps, nous pouvons voir les sujets suivants :</p>
+<p>Si vous avez encore du temps, nous pouvons voir les sujets suivants:</p>
 <ol type="1">
 <li>La CICD</li>
 <li>Test unitaire de composant</li>
