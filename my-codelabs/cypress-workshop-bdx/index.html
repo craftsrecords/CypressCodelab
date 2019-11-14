@@ -112,17 +112,25 @@ npm install
 <li>Vous verrez qu&#39;il y a des duplications dans le code au niveau de la commande <code>visit</code>. Pour y remédier, pensez que vous êtes dans un environnement <code>Mocha</code> : vous avez donc à votre disposition les <a href="https://mochajs.org/#hooks" target="_blank">hooks</a></li>
 <li>Autre duplication visible: la validation de la présence du message d&#39;erreur. Vous pouvez écrire une fonction pour factoriser cette partie (<code>C&#39;est juste du JavaScript</code> 😉)</li>
 </ul>
-<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/02-login.answer.spec</code></p>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/02-login.answer.spec.js</code></p>
 </aside>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Intercepter les requêtes XHR 🤯" duration="15">
-        <p>Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines.<br>Lorsqu&#39;on lance le test, celui-ci échoue, néanmoins : l&#39;article n&#39;existe pas côté serveur (il a pu être modifié ou autre).</p>
-<p>Pour s&#39;afficher, la page <code>article</code> lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l&#39;article et une<br>autre pour récupérer les commentaires liés à cet article.</p>
-<p>Nous allons utiliser les commandes <a href="https://docs.cypress.io/api/commands/server.html" target="_blank">cy.server</a> et <a href="https://docs.cypress.io/api/commands/route.html" target="_blank">cy.route</a> pour contrôler les appels réseaux qui nous intéressent !</p>
-<p>Une fois le premier test passé. Nous allons utilisé la commande <code>cy.route</code> dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.</p>
+        <p>Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines. Lorsqu&#39;on lance le test, celui-ci échoue: l&#39;article n&#39;existe pas côté serveur (il a pu être modifié/supprimé).</p>
+<p>Pour s&#39;afficher, la page <code>article</code> lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l&#39;article et une autre pour récupérer les commentaires liés à cet article.</p>
+<p>Nous allons utiliser les commandes <a href="https://docs.cypress.io/api/commands/server.html" target="_blank">cy.server</a> et <a href="https://docs.cypress.io/api/commands/route.html" target="_blank">cy.route</a> pour contrôler les appels réseaux qui nous intéressent!</p>
+<p>Une fois le premier test passé. Nous allons utilisé la commande <code>cy.route</code> en mode &#34;pro&#34; dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.</p>
+<ul>
+<li>Dans l&#39;interface de Cypress, arrêter le test de l&#39;exercice précédent et exécuter le test <code>03-article.spec.js</code></li>
+<li>Dans le fichier <code>cypress/integration/03-article.spec.js</code>, compléter les TODOs de la première série de tests (<code>context(&#39;In an anonymous context&#39;, ...</code>)</li>
+</ul>
+<aside class="special"><p>Cypress vous indique clairement les requêtes XHR qui sont lancées lors de l&#39;affichage de votre page (avec les lignes commençant par <code>(XHR)</code>). Lorsque que vous aurez intercepté et stubbé ces requêtes, Cypress préfixera ces lignes avec <code>(XHR stub)</code>. Cela validera que la définition de vos <code>cy.route</code> fonctionne 😉</p>
+</aside>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/03-article.answer.spec.js</code></p>
+</aside>
 
 
       </google-codelab-step>

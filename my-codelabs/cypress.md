@@ -116,21 +116,28 @@ Dans ce test, nous allons tester la fonctionnalité d'authentification de maniè
 - Autre duplication visible: la validation de la présence du message d'erreur. Vous pouvez écrire une fonction pour factoriser cette partie (`C'est juste du JavaScript` 😉)
 
 Negative
-: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/02-login.answer.spec`
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/02-login.answer.spec.js`
 
 ## Intercepter les requêtes XHR 🤯
 
 Duration: 15
 
-Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines.
-Lorsqu'on lance le test, celui-ci échoue, néanmoins : l'article n'existe pas côté serveur (il a pu être modifié ou autre).
+Dans la première partie du test (celle concernant la partie non authentifié), on peut constater que les assertions sont très fines. Lorsqu'on lance le test, celui-ci échoue: l'article n'existe pas côté serveur (il a pu être modifié/supprimé).
 
-Pour s'afficher, la page `article` lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l'article et une
-autre pour récupérer les commentaires liés à cet article.
+Pour s'afficher, la page `article` lance 2 requêtes vers le serveur : une pour récupérer les informations relatives à l'article et une autre pour récupérer les commentaires liés à cet article.
 
-Nous allons utiliser les commandes [cy.server](https://docs.cypress.io/api/commands/server.html) et [cy.route](https://docs.cypress.io/api/commands/route.html) pour contrôler les appels réseaux qui nous intéressent !
+Nous allons utiliser les commandes [cy.server](https://docs.cypress.io/api/commands/server.html) et [cy.route](https://docs.cypress.io/api/commands/route.html) pour contrôler les appels réseaux qui nous intéressent!
 
-Une fois le premier test passé. Nous allons utilisé la commande `cy.route` dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.
+Une fois le premier test passé. Nous allons utilisé la commande `cy.route` en mode "pro" dans les autres tests pour simuler des erreurs (404, 500) ou avoir des temps de réponses différents et ainsi pouvoir facilement voir comment réagit notre site sur des cas limites.
+
+- Dans l'interface de Cypress, arrêter le test de l'exercice précédent et exécuter le test `03-article.spec.js`
+- Dans le fichier `cypress/integration/03-article.spec.js`, compléter les TODOs de la première série de tests (`context('In an anonymous context', ...`)
+
+Positive
+: Cypress vous indique clairement les requêtes XHR qui sont lancées lors de l'affichage de votre page (avec les lignes commençant par `(XHR)`). Lorsque que vous aurez intercepté et stubbé ces requêtes, Cypress préfixera ces lignes avec `(XHR stub)`. Cela validera que la définition de vos `cy.route` fonctionne 😉
+
+Negative
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/03-article.answer.spec.js`
 
 ## Les custom commands 😎
 
