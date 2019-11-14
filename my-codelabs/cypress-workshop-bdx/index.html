@@ -90,11 +90,15 @@ npm install
       </google-codelab-step>
     
       <google-codelab-step label="Critical Flow 🚨" duration="15">
-        <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.</p>
+        <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement. A l&#39;issue de cet exercice, vous serez familier avec les commandes de bases de Cypress: <code>cy.visit</code>, <code>cy.get</code>, <code>cy.title</code>, <code>should</code>, <code>click</code>, etc.</p>
 <ul>
-<li>Dans le fichier <code>spec.js</code>, compléter the TODOs.</li>
+<li>Compléter les TODOs dans le fichier <code>cypress/integration/01-critical-flow.spec.js</code></li>
 </ul>
-<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>answer.js</code></p>
+<aside class="special"><p>Jouer avec le <a href="https://docs.cypress.io/api/cypress-api/selector-playground-api.html#Syntax" target="_blank">Selector Playground</a> pour trouver les éléments sur lesquels vous allez faire des <a href="https://docs.cypress.io/guides/references/assertions.html#Common-Assertions" target="_blank">assertions</a></p>
+</aside>
+<aside class="special"><p>Noter qu&#39;à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode <a href="https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests" target="_blank">watch</a> sur le répertoire <code>integration</code> 👀</p>
+</aside>
+<aside class="warning"><p>La solution de l&#39;exercice se trouve dans le fichier <code>cypress/integration/answers/01-critical-flow.spec.js</code></p>
 </aside>
 
 

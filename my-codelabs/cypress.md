@@ -91,12 +91,18 @@ Vous êtes maintenant prêt! 💪
 
 Duration: 15
 
-Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L'objectif est de balayer l'ensemble des pages et de vérifier qu'elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement.
+Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L'objectif est de balayer l'ensemble des pages et de vérifier qu'elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement. A l'issue de cet exercice, vous serez familier avec les commandes de bases de Cypress: `cy.visit`, `cy.get`, `cy.title`, `should`, `click`, etc.
 
-- Dans le fichier `spec.js`, compléter the TODOs.
+- Compléter les TODOs dans le fichier `cypress/integration/01-critical-flow.spec.js`
+
+Positive
+: Jouer avec le [Selector Playground](https://docs.cypress.io/api/cypress-api/selector-playground-api.html#Syntax) pour trouver les éléments sur lesquels vous allez faire des [assertions](https://docs.cypress.io/guides/references/assertions.html#Common-Assertions)
+
+Positive
+: Noter qu'à chaque sauvegarde de votre fichier de test, Cypress rejoue automatique le test. Il est en effet en mode [watch](https://docs.cypress.io/guides/core-concepts/writing-and-organizing-tests.html#Watching-tests) sur le répertoire `integration` 👀
 
 Negative
-: La solution de l'exercice se trouve dans le fichier `answer.js`
+: La solution de l'exercice se trouve dans le fichier `cypress/integration/answers/01-critical-flow.spec.js`
 
 ## Hooks et factorisation 👩‍💻
 
