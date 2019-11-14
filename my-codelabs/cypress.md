@@ -28,7 +28,7 @@ Bienvenue dans ce workshop dédié à Cypress! Nous espérons qu'il vous plaira!
 
 N'hésitez pas à:
 
-- à soliciter les animateurs du workshop
+- soliciter les animateurs du workshop
 - aider les autres si vous avez déjà de l'expérience avec Cypress
 - regarder la [documentation (très bien faite) de Cypress](https://docs.cypress.io/api/api/table-of-contents.html)
 
@@ -43,10 +43,12 @@ Duration: 15
 - Avoir une connection internet
 - [Git](https://git-scm.com/downloads)
 - [NodeJs](https://nodejs.org/en/download/)
-- _Recommandé mais pas obligatoire_: [Visual Studio Code](https://code.visualstudio.com/)
+- _Recommandé mais pas obligatoire_
+  - Une version de `npm` supérieur à 5.2.0 (car la commande `npx`, c'est cool)
+  - [Visual Studio Code](https://code.visualstudio.com/) (pour la complétion)
 
 Negative
-: Si par hasard, vous accédez à internet via un proxy d'entreprise, pensez à jeter aussi un coup d'oeil sur [cette page](https://docs.cypress.io/guides/references/proxy-configuration.html) pour que Cypress fonctionne correctement
+: Si par hasard vous accédez à internet via un proxy d'entreprise, pensez à jeter aussi un coup d'oeil sur [cette page](https://docs.cypress.io/guides/references/proxy-configuration.html) pour que Cypress fonctionne correctement
 
 ### Télécharger le repo
 
@@ -79,7 +81,7 @@ npx cypress open
 
 ![interface accueil cypress](assets/ui-accueil.png)
 
-- Lancer un test simple: cliquer sur le test `hello.spec.js`
+- Lancer un test simple: cliquer sur le test `00-hello.spec.js`
 
 ![premier test](assets/first-test.gif)
 
@@ -93,6 +95,7 @@ Duration: 15
 
 Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L'objectif est de balayer l'ensemble des pages et de vérifier qu'elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement. A l'issue de cet exercice, vous serez familier avec les commandes de bases de Cypress: `cy.visit`, `cy.get`, `cy.title`, `should`, `click`, etc.
 
+- Dans l'interface de Cypress, exécuter le test `01-critical-flow.spec.js`
 - Compléter les TODOs dans le fichier `cypress/integration/01-critical-flow.spec.js`
 
 Positive
@@ -270,7 +273,7 @@ Nous espérons que vous avez apprécié ce workshop et que vous allez très vite
 
 <https://openfeedback.io/3BQH3sLpx0EfLHHC7Wng/2019-11-15/33>
 
-### Gagnez un tshirt Cypress
+### Gagnez un tshirt Cypress!
 
 Remplissez le questionnaire: <https://link.cypress.io/rodolphe-f>
 

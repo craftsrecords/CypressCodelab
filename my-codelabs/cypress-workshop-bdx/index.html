@@ -40,7 +40,7 @@
 <h2 is-upgraded>Pendant le workshop</h2>
 <p>N&#39;hésitez pas à:</p>
 <ul>
-<li>à soliciter les animateurs du workshop</li>
+<li>soliciter les animateurs du workshop</li>
 <li>aider les autres si vous avez déjà de l&#39;expérience avec Cypress</li>
 <li>regarder la <a href="https://docs.cypress.io/api/api/table-of-contents.html" target="_blank">documentation (très bien faite) de Cypress</a></li>
 </ul>
@@ -54,9 +54,13 @@
 <li>Avoir une connection internet</li>
 <li><a href="https://git-scm.com/downloads" target="_blank">Git</a></li>
 <li><a href="https://nodejs.org/en/download/" target="_blank">NodeJs</a></li>
-<li><em>Recommandé mais pas obligatoire</em>: <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+<li><em>Recommandé mais pas obligatoire</em><ul>
+<li>Une version de <code>npm</code> supérieur à 5.2.0 (car la commande <code>npx</code>, c&#39;est cool)</li>
+<li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> (pour la complétion)</li>
 </ul>
-<aside class="warning"><p>Si par hasard, vous accédez à internet via un proxy d&#39;entreprise, pensez à jeter aussi un coup d&#39;oeil sur <a href="https://docs.cypress.io/guides/references/proxy-configuration.html" target="_blank">cette page</a> pour que Cypress fonctionne correctement</p>
+</li>
+</ul>
+<aside class="warning"><p>Si par hasard vous accédez à internet via un proxy d&#39;entreprise, pensez à jeter aussi un coup d&#39;oeil sur <a href="https://docs.cypress.io/guides/references/proxy-configuration.html" target="_blank">cette page</a> pour que Cypress fonctionne correctement</p>
 </aside>
 <h2 is-upgraded>Télécharger le repo</h2>
 <pre><code>git clone  https://github.com/rbung/CypressWorkshop.git
@@ -81,7 +85,7 @@ npm install
 </ul>
 <p class="image-container"><img alt="interface accueil cypress" src="img/28c660fafaaefb4a.png"></p>
 <ul>
-<li>Lancer un test simple: cliquer sur le test <code>hello.spec.js</code></li>
+<li>Lancer un test simple: cliquer sur le test <code>00-hello.spec.js</code></li>
 </ul>
 <p class="image-container"><img alt="premier test" src="img/ba4a8b3acc69819b.gif"></p>
 <p>Vous êtes maintenant prêt! 💪</p>
@@ -92,6 +96,7 @@ npm install
       <google-codelab-step label="Critical Flow 🚨" duration="15">
         <p>Dans ce test, nous allons tester les principales fonctionnalités proposées par le site. L&#39;objectif est de balayer l&#39;ensemble des pages et de vérifier qu&#39;elles sont correctement affichées. Nous allons aussi valider que les comportements de base fonctionnent correctement. A l&#39;issue de cet exercice, vous serez familier avec les commandes de bases de Cypress: <code>cy.visit</code>, <code>cy.get</code>, <code>cy.title</code>, <code>should</code>, <code>click</code>, etc.</p>
 <ul>
+<li>Dans l&#39;interface de Cypress, exécuter le test <code>01-critical-flow.spec.js</code></li>
 <li>Compléter les TODOs dans le fichier <code>cypress/integration/01-critical-flow.spec.js</code></li>
 </ul>
 <aside class="special"><p>Jouer avec le <a href="https://docs.cypress.io/api/cypress-api/selector-playground-api.html#Syntax" target="_blank">Selector Playground</a> pour trouver les éléments sur lesquels vous allez faire des <a href="https://docs.cypress.io/guides/references/assertions.html#Common-Assertions" target="_blank">assertions</a></p>
@@ -244,7 +249,7 @@ export default Banner;
 <h2 is-upgraded>Feedback</h2>
 <p class="image-container"><img alt="feedback bdxio" src="img/eef18a330affae10.png"></p>
 <p><a href="https://openfeedback.io/3BQH3sLpx0EfLHHC7Wng/2019-11-15/33" target="_blank">https://openfeedback.io/3BQH3sLpx0EfLHHC7Wng/2019-11-15/33</a></p>
-<h2 is-upgraded>Gagnez un tshirt Cypress</h2>
+<h2 is-upgraded>Gagnez un tshirt Cypress!</h2>
 <p>Remplissez le questionnaire: <a href="https://link.cypress.io/rodolphe-f" target="_blank">https://link.cypress.io/rodolphe-f</a></p>
 <h2 is-upgraded>Nous contacter</h2>
 <p>Sur Twitter</p>
